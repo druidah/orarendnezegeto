@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<html>
+<head>
+    <title>Linkjeid</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Linkjeid</h1>
+
+    <h2>Mentett linkek:</h2>
+    <ul>
+    {% for link in user_links %}
+        <li> <a href="{% url 'ics_link_detail' link.pk %}">{{ link.url }}</a> </li>
+    {% empty %}
+        <li>Nincs mentett link.</li>
+    {% endfor %}
+    </ul>
+
+    <h2>Új link hozzáadása:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Hozzáadás</button>
+    </form>
+</body>
+</html>

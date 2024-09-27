@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neptun órarend nézegető</title>
+</head>
+<body>
+
+    <nav>
+        {% if not user.is_authenticated %}
+            <ul>
+                <li><a href="{% url 'login' %}">Bejelentkezés</a></li>
+                <li><a href="{% url 'register' %}">Regisztráció</a></li>
+            </ul>
+        {% else %}
+            <p>Be vagy jelentkezve mint {{ user.username }}.</p>
+            <a href="{% url 'user_links' %}">Ugrás a linkjeidhez</a>
+<form method="POST" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Kijelentkezés</button>
+</form>
+        {% endif %}
+    </nav>
+<h1> Üdv a neptun órarend nézegetőben! </h1>
+<p> Ez az oldal azért jött létre, mert lusta vagyok, főként. A másik része, a BLD, azaz Brányi László Dekóder még fejlesztés alatt van. </p>
+</body>
+</html>
