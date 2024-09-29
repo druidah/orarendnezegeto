@@ -15,9 +15,7 @@ Egy ASP.NET alkalmazás elkészítése, ami képes útvonaltervezésre, valamint
 
 ## Git segítség, ha kellene
 - `git fetch`: Behúzza a repo origin-ből az ágakat, hogy lokálisan is meglegyenek.
-- `git pull`:at hogy localy is meglegyen
-git pull 
-csak commit után ha van munkátok, git asszem szól is miatta. Ha rápulloltok a változtatásaitokra, azok elvesznek... Ez origin 
+- `git pull`: Ez originből behúzza a legfrissebb állapotot. Ha rápulloltok a változtatásaitokra, azok elvesznek... 
 - GitHub-on is lehet ágat létrehozni, ami egyszerűbb.
    1. `git checkout solution-létrehozása`
    2. GitHub oldalán pull request, és kész.
