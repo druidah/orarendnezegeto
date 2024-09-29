@@ -12,6 +12,21 @@ Egy ASP.NET alkalmazás elkészítése, ami képes útvonaltervezésre, valamint
 5. Hetente vagy ha több fejlesztés is készen van, akkor a SCRUM ágakat egyszerre összegezzük. A team leaderek indítanak pull requestet egy `nextupdate` branch-re, amit minden leader átnéz és approve-ol. Csak így kerülhet bele. A `nextupdate` azért kell, hogy a main branch-be csak tiszta, működő kód kerüljön.
 6. Igyekezzünk beszédes metódus-, osztály- és változóneveket használni, ha nem dobjuk el pár sor után. Ha bármeddig megmarad egy elem (pl. class vagy metódusnév), mindenképp legyen beszédes neve. A Visual Studio segít kitölteni, csak egyszer kell begépelni.
 7. Tartsuk átláthatóan a kódot, külön `.cs` fájlokba darabolva a releváns részeket. Az "egyfájlos" megoldás helyett jobb a Separation of Concerns elve szerint működni. Így például külön fájlokban kezeljük a heatmap-et, az adatbázis kezelését stb.
+Egy angol fórumról egy ide vágó rész:
+It's pretty easy once you get the hang of it. One class per file/one file per class.
+Is there a reason they use multiple files over just one big file?
+
+There's absolutely tons of answers to this but the most common ones would be:
+
+-- Easier to maintain
+
+No one wants to look through a file that is several thousands of lines long
+
+-- Source control for team environments. Having everyone work on one or two big files and then everyone checking in is going to be merge hell. You'd be figuring out for ages which changes should go in or not.
+
+-- Something called the "Separation of concerns" (https://en.wikipedia.org/wiki/Separation_of_concerns). It's far easier to understand whats going on if you have: GameRules.cs GamePlayer.cs Enemy.cs Board.cs instead of Game.cs
+
+-- Moving files to folders is a good way of grouping functionality by purpose. For example you could have a folder called "Database" and another called "UserInterface.WPF" etc.
 
 ## Git segítség, ha kellene
 - `git fetch`: Behúzza a repo origin-ből az ágakat, hogy lokálisan is meglegyenek.
